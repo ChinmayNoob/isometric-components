@@ -1,0 +1,27 @@
+/*
+ * Maps anatomy figures onto this app's shadcn tokens. Tokens are set on .iso-figure (a descendant of .iso), so they
+ * win over the kit's theme blocks by inheritance. Corner and legend text use the app's text roles.
+ */
+
+.iso-skin .iso-figure {
+  --anatomy-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --anatomy-text: var(--foreground);
+  --anatomy-muted: var(--muted-foreground);
+  --anatomy-strong: var(--foreground);
+  margin: 0;
+}
+
+.iso-skin .iso-plate {
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  box-shadow: none;
+}
+
+.iso-skin .iso-plate-corner {
+  font-size: 11px;
+}
+
+.iso-skin .iso-legend {
+  font-size: 14px;
+  line-height: 1.5;
+}

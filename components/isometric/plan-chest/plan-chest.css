@@ -1,0 +1,65 @@
+.pc {
+  /* Inside the carcass: darker than the sheet, so an opening reads as depth. */
+  --pc-cavity: #0a0a0a;
+  /* The sheets are the subject: paper on the drawer floor, lighter than the steel round them. */
+  --pc-sheet: #2b2b2b;
+  --pc-sheet-side: #202020;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html:not(.dark) .pc {
+  --pc-cavity: #c6c6c1;
+  --pc-sheet: #ffffff;
+  --pc-sheet-side: #ededea;
+}
+
+.pc:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.pc .pc-drawer {
+  cursor: pointer;
+}
+
+.pc .pc-cavity {
+  fill: var(--pc-cavity);
+  stroke: none;
+}
+
+.iso-skin .pc-hint-touch {
+  display: none;
+}
+
+@media (hover: none) {
+  .iso-skin .pc-hint-fine {
+    display: none;
+  }
+
+  .iso-skin .pc-hint-touch {
+    display: inline;
+  }
+}
+
+@media (max-width: 640px) {
+  .iso-plate .pc {
+    overflow: hidden;
+  }
+
+  .iso-plate .pc .iso-svg {
+    width: 112%;
+    margin: -3% -6% -2%;
+  }
+}
+
+.pc [data-p="stack"] > .iso-top,
+.pc .pc-sheet > .iso-top {
+  fill: var(--pc-sheet);
+}
+
+.pc [data-p="stack"] > .iso-shade {
+  fill: var(--pc-sheet-side);
+}

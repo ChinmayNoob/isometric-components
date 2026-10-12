@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored anatomy kit (MIT), kept as shipped so it can be updated from the skill.
+    "components/iso/**",
   ]),
 ]);
 

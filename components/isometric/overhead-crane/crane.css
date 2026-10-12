@@ -1,0 +1,71 @@
+.cr {
+  --cr-cavity: #070707;
+  --cr-metal: #f4f4f4;
+  cursor: grab;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html:not(.dark) .cr {
+  --cr-cavity: #c6c6c1;
+  --cr-metal: #1b1b1d;
+}
+
+.cr[data-drag] {
+  cursor: grabbing;
+}
+
+.cr:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+}
+
+.cr .cr-cavity {
+  fill: var(--cr-cavity);
+  stroke: none;
+}
+
+.cr .cr-metal {
+  fill: var(--cr-metal);
+  stroke: none;
+}
+
+.cr .cr-rope {
+  stroke-width: 0.7px;
+}
+
+.cr .cr-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.iso-skin .cr-hint-touch {
+  display: none;
+}
+
+@media (hover: none) {
+  .iso-skin .cr-hint-fine {
+    display: none;
+  }
+
+  .iso-skin .cr-hint-touch {
+    display: inline;
+  }
+}
+
+@media (max-width: 640px) {
+  .iso-plate .cr {
+    overflow: hidden;
+  }
+
+  .iso-plate .cr .iso-svg {
+    width: 114%;
+    margin: -4% -7% -3%;
+  }
+}
